@@ -1,0 +1,34 @@
+
+extends layout
+
+block content
+  div(class='maindiv')
+    table
+      thead
+        tr
+          th Id
+          th Restaurant Name
+          th Visit Date
+          th Meal Name
+          th Total Cost
+          th Review Score
+          th Will Return?
+          th Bottomless Drinks?
+          th Notes
+          th Single View
+          tbody
+          for row in rows
+            tr
+              td= row.id
+              td= row.restaurant_name
+              td= row.date_of_visit
+              td= row.meal_name
+              td= row.total_cost
+              td= row.review_score
+              td= row.will_return
+              td= row.bottomless_drinks
+              td= row.notes
+              td
+                a(href=`/viewsingle/${row.id}`) Click for Single Entry
+    div(class='row')
+      a(href='/create' class='btn-large center-align createbutton') Create New Entry

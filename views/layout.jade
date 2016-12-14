@@ -1,7 +1,23 @@
 doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    title= brunchdb
+    link(rel='stylesheet', type='text/css', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
   body
-    block content
+    header 
+      nav(class='deep-orange darken-1')
+        div(class='nav-wrapper')
+          a(href='/', class='brand-logo') Brunch Reviews
+          ul(id='nav-mobile' class='right hide-on-med-and-down')
+            li
+              a(href='/viewall') View All
+            li
+              a(href='/create') Create 
+    main  
+      block content
+    footer(class='deep-orange darken-1')
+      small &copy; Chris Houdlette
+    script(src='https://code.jquery.com/jquery-3.1.1.min.js')
+    script(src='/javascripts/app.js')
+      

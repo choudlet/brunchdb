@@ -1,0 +1,74 @@
+
+extends layout
+
+block content
+
+  div(class='container')
+  h3(class='center-align') Edit Previous Entry
+  form(action='/viewsingle/' + row[0].id +'?_method=put', method='post')
+    div(class='row')
+      div(class="col s4")
+      div(class='col s4')
+        label(for='restaurant_name') Restaurant Name
+        input(type='text', name='restaurant_name', value=row[0].restaurant_name required)
+        div(class="col s4")
+    div(class='row')
+      div(class='col s3')
+      div(class='col s3')
+        label(for='date_of_visit') Visit Date
+        input(type='date', name='date_of_visit', class='datepicker' value=row[0].date_of_visit required)
+      div(class='col s3')
+        label(for='meal_name') Meal Name
+        input(type='text', name='meal_name', value=row[0].meal_name required)
+      div(class='col s3')
+    div(class='row')
+      div(class='col s3')
+      div(class='col s3')
+        label(for='total_cost') Total Cost
+        input(type='number', step='any', name='total_cost' value=row[0].total_cost)
+      div(class='col s3')
+        label(for='review_score') Review Score (1 to 10)
+        input(type='number', name='review_score', min='1', value=row[0].review_score, max='10')
+      div(class='col s3')
+    div(class='row')
+      div(class='col s3')
+      div(class='col s3')
+        label(for='will_return') Will You Return?
+        -var will = row[0].will_return
+        if will == true
+          input(type='radio', name='will_return', id='true', value='true', checked='checked')
+          label(for='true') True
+          input(type='radio', name='will_return', id='false', value='false', checked='checked')
+          label(for='false') False
+        else
+          input(type='radio', name='will_return', id='true', value='true',)
+          label(for='true') True
+          input(type='radio', name='will_return', id='false', value='false' checked='checked')
+          label(for='false') False
+      div(class='col s3')
+        label(for='will_return') Bottomless Drinks Available?
+        -var bottom = row[0].bottomless_drinks
+        if bottom == true
+          input(type='radio', name='bottomless_drinks', id='true1', value='true' checked='checked')
+          label(for='true1') True
+          input(type='radio', name='bottomless_drinks', id='false1', value='false')
+          label(for='false1') False
+        else
+          input(type='radio', name='bottomless_drinks', id='true1', value='true')
+          label(for='true1') True
+          input(type='radio', name='bottomless_drinks', id='false1', value='false' checked='checked')
+          label(for='false1') False
+      div(class='col s3')
+    div(class='row')
+      div(class="col s4")
+      div(class='col s4')
+        label(for='notes') Notes
+        input(type='text', name='notes' value=row[0].notes)
+    div(class='row')
+      div(class="col s4")
+      div(class='col s4')
+        button(type='submit' class='btn-large center-align' ) Submit
+      div(class="col s4")
+  
+  
+  

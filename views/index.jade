@@ -1,5 +1,26 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h2(class='center-align') Welcome to Brunch Reviews
+  p(class="center-align") You don't have time for shitty brunch! Use this site to log your favorite brunch spots
+  div(class='valign-wrapper container')
+    div(class='row')
+      div(class='col s12')
+        div(class='card small')
+          div(class='card-image')
+            img(src='https://blog.vegas.com/wp-content/uploads/2015/09/Brunch-Border-Grill1.jpg')
+          div(class='card-content')
+            p Click here if you want to see all brunch entries!
+          div(class='card-action')
+            a(href='/viewall') View All
+      div(class='row')
+        div(class='col s12')
+          div(class='card small')
+            div(class='card-image')
+              img(src='https://cdn2.vox-cdn.com/uploads/chorus_image/image/50324701/Brunch.0.0.jpg')
+            div(class='card-content')
+              p Click here if you want to create a new brunch review!
+            div(class='card-action')
+              a(href='/create') Create Entry
+
+  

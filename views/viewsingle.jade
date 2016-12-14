@@ -1,0 +1,54 @@
+
+extends layout
+
+block content
+  div(class="container")
+    div(class='row first')
+      div(class="col s4")
+        h5(class='center-align') ID:
+      div(class="col s4")
+        h5(class='center-align') Restaurant:
+      div(class="col s4")
+        h5(class='center-align') Visit Date:
+    div(class='row first')
+      div(class='col s4')
+        h6(class='center-align id')= row[0].id
+      div(class="col s4")
+        h6(class='center-align')= row[0].restaurant_name
+      div(class='col s4')
+        h6(class='center-align')= row[0].date_of_visit
+    div(class='row second')
+      div(class='col s6 second')
+        h5(class='center-align') Meal Name:
+      div(class='col s6')
+        h5(class='center-align') Total Cost:
+    div(class='row second')
+      div(class='col s6')
+        h6(class='center-align')= row[0].meal_name
+      div(class='col s6')
+        h6(class='center-align')= row[0].total_cost
+    div(class='row third')
+      div(class="col s4")
+        h5(class='center-align') Review Score:
+      div(class="col s4")
+        h5(class='center-align') Will Return?
+      div(class='col s4')
+        h5(class='center-align') Bottomless Drinks?
+    div(class='row third')
+      div(class="col s4")
+        h6(class='center-align')= row[0].review_score
+      div(class="col s4")
+        h6(class='center-align')= row[0].will_return
+      div(class='col s4')
+        h6(class='center-align')= row[0].bottomless_drinks
+    div(class='row fourth')
+      div(class='col s12')
+        h5(class='center-align') Notes:
+    div(class='row fourth')
+      div(class='col s12')
+        h6(class='center-align')= row[0].notes
+    div(class='row')
+      div(class='col s6 buttonrow')
+        a(class='btn-large editbutton' href='/viewsingle/'+ row[0].id +'/edit') Edit Entry
+      div(class='col s6 buttonrow')
+        a(class='btn-large deletebutton' data-id=row[0].id) Delete Entry
