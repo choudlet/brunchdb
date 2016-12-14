@@ -18,7 +18,7 @@ router.get('/:id', function(req, res, next) {
 
  router.delete('/:id', function(req,res,next) {
   knex('brunch_review').select().where('id', req.params.id).del().then(()=> {
-    res.send('Deleted');
+    res.redirect('/viewall');
    });
 
  });

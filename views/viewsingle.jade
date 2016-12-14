@@ -51,4 +51,5 @@ block content
       div(class='col s6 buttonrow')
         a(class='btn-large editbutton' href='/viewsingle/'+ row[0].id +'/edit') Edit Entry
       div(class='col s6 buttonrow')
-        a(class='btn-large deletebutton' data-id=row[0].id) Delete Entry
+        form(action='/viewsingle/' +row[0].id +'?_method=delete', method='post' )
+          button(class='btn-large deletebutton' data-id=row[0].id) Delete Entry
